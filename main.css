@@ -581,3 +581,59 @@ ul li a:hover {
     margin: 0 0 10px;
     float: right;
 }
+.items{
+    width: 100%;
+   
+}
+.list{
+    margin-bottom: 20px;
+}
+.item{
+    display: block;
+    float: left;
+    min-height: 30px;
+    width:30%;
+    margin-left: 2%;
+    box-sizing: border-box
+}
+.item_container{
+    position: relative;    
+    padding: 4px;
+    line-height: 20px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.item_container img{
+    max-width: 100%;
+}
+.item_container .item_caption{
+    padding: 9px;
+    color: #555555;
+    background: #F3F2F2;
+    text-align: center;
+    line-height: 20px;
+}
+.item_container h5, item_container p{
+    text-align: center;
+}
+.item_caption p{
+    margin:0;
+}
+.actionList a {
+    width: 50%;
+    font-size: 11px;
+    color: #444;
+}
+.actionList a:hover,.actionList a:focus {
+    color: #005580;
+    text-decoration: underline;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
