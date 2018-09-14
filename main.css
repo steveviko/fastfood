@@ -2,14 +2,13 @@
     margin:0; 
     padding:0
 }
-body{
-    background:url(images/site_bg.png) top center no-repeat fixed #000;
-    font-family:Arial; 
-    font-size:12px; 
-    line-height:13px;  
+body {
+    background: url(images/site_bg.png) top center no-repeat fixed #656060;
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 13px;
     color: #333;
-
-    }
+}
 #main_container{
     width: 940px;
     display: block;
@@ -53,55 +52,55 @@ a{
 .right_links{
     text-align: right;
 }
-.left_links{
+.left_links {
     float: left;
+    width: 20%;
 }
-.left_links a{
-    width: auto;
-    height: 24px;
-    line-height: 24px;  
+
+.left_links a {
+    width: 14%; 
+    line-height: 24px;
     padding: 1px;
-    border-radius: 7%;
-    margin-top: 1px;
-    margin-left: 1%;
-    font-size: 14px;    
-    background: #999;
+    border-radius: 50%;
+    margin-top: 2px;    
+    font-size: 25px;
+    background: #0088cc;    
     color: #fff;
+    text-align: center;
     
 }
+ 
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
 }
 #header{
-    padding:44px 0px 8px;
+    padding: 40px 0px 40px;
     
 }
 
 .logo{
-    width: 300px;
+    width: 250px;
     float: left;
-    min-height: 1px;
-    margin-left: 20px;  
-    padding-top: 11px;
-    display: block;
    
 }
-.logo img{
-    
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        vertical-align: middle;
-        border: 0;
+.logo img {
+    width: 224px;
+    height: 51px;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
 }
 .banner {
-    width: 300px;
+    width: 280px;
     float: left;
     min-height: 1px;
-    margin-left: 20px;    
-    font-size: 14px;       
-    border: 1px dashed rgb(252, 111, 0);   
+    margin-left: 40px;
+    font-size: 14px;
+    border: 2px dashed rgb(252, 111, 0);
     color: #fc6f00;
+    padding: 7px;
+    line-height: 18px;
     
 }
 .banner:hover {
@@ -110,12 +109,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     background: rgb(252, 111, 0);
 }
 
-.tel{
-    width: 300px;
+.tel {
+    width: 250px;
     float: left;
-    text-align: right;
+    text-align: left;
     min-height: 1px;
-    margin-left: 20px;
+    line-height: 18px;
+    margin-left: 8%;
+}
+
+.tel p {
+    
+    font-weight: bolder;
 }
 #header h1 .banner{
     margin: 0;
@@ -157,7 +162,7 @@ ul li{
     display: inline-block; 
 }
 ul li a{
-    line-height: 30px; 
+    line-height: 36px; 
     padding-left: 10px ;
     color: #f7f3f3;    
     text-shadow: 0 1px 0 #ffffff;
@@ -252,7 +257,7 @@ ul li a:hover {
     text-decoration: none;
     background-color: #eeeeee;
     color: #f89406;
-    
+    font-weight: bolder;    
 }
 .cat_list li{
     display: block;
@@ -342,11 +347,11 @@ ul li a:hover {
     color: #555555;
     background: #F3F2F2;
 }
-.caption  h4 {
+.caption h4 {
     margin: 0;
     line-height: 1.5em;
     padding: 0 13px;
-    display: inline-block;
+    display: block;
 }
 .promo_button{
     min-height: 34px;
