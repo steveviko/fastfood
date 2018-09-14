@@ -594,6 +594,7 @@ ul li a:hover {
     min-height: 30px;
     width:30%;
     margin-left: 2%;
+    margin-bottom: 2%;
     box-sizing: border-box
 }
 .item_container{
