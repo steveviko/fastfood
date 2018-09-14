@@ -695,5 +695,9 @@ table{
     }
 .AlignRight { 
     float: right;
-    display:inline; 
+     
     }
+.icon_del a:hover{
+    color:orange;
+    }
+  
