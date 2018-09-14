@@ -638,3 +638,62 @@ ul li a:hover {
 .right{
     float: right;
 }
+table{
+    width:100%;
+     border:0 ;
+     
+}
+.table th{ 
+	background:#fffdfa  ;
+	color:#404040; 
+	font-weight:bolder;
+	text-align: left; 
+	padding:7px 10px; 
+	border-bottom:solid 1px #d2d1cb;
+	}
+.table td{ 
+	background:#fbfcfc;
+	border-bottom:solid 1px #e0e0e0;
+	padding:8px 10px; 
+	}
+.table tr.odd td{
+ background:#f8f8f8;
+ }
+.table tr:hover td{ 
+	background:#fff9e1;
+	}
+.pagging { 
+	height:20px; 
+	padding:8px 10px;
+	line-height:19px;
+	color:#949494; 
+	}
+.pagging a{ 
+	background:url(images/pagging.gif) repeat-x 0 0;
+	 height:20px; 
+	 float:left; 
+	 padding:0 8px; 
+	 border:solid 1px #d5d5d5; 
+	 text-decoration: none; 
+	 color:#949494;
+	 margin-left:5px; 
+	 }
+.pagging a:hover {
+	border-color:#8c3521;
+	background:orange;
+	color:#fff; 
+	}
+.pagging span{
+	float:left;
+	margin-left:5px; 
+	padding-top:2px; 
+    }
+.AlignLeftt{
+    color:#303030;     
+    display:inline; 
+    font-weight:bolder;
+    }
+.AlignRight { 
+    float: right;
+    display:inline; 
+    }
