@@ -14,5 +14,12 @@ def create_order():
 def get_all_orders():
     return order.get_all()
 
+
+@app.route("/api/v1/orders/<int:orderId>", methods = ["GET"])
+def get_order_by_id(orderId):
+    return order.get_id(orderId)
+
+
+
 if __name__=='__main__':
     app.run(debug=True)
