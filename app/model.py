@@ -26,3 +26,14 @@ class FastFoodOrders():
             return jsonify({'order':orders[0]})
         else:
             return jsonify({'Error':'Id not found'})
+
+
+    def Edit_an_order(self,orderId):  
+        data = request.get_json()
+        
+        orders =[order for order in self.listofOrders if order['id']== orderId]
+        orders[0]['name'] = data['name']
+        if orders:
+            return jsonify({'order' : orders[0]})
+        else:
+            return jsonify({'Error':'Id not found'})

@@ -19,6 +19,9 @@ def get_all_orders():
 def get_order_by_id(orderId):
     return order.get_id(orderId)
 
+@app.route("/api/v1/orders/<int:orderId>", methods = ["PUT"])
+def createA(orderId):
+    return order.Edit_an_order(orderId)
 
 
 if __name__=='__main__':
