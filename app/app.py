@@ -10,6 +10,9 @@ app = Flask(__name__)
 def create_order():
     return order.add_order()
 
+@app.route("/api/v1/orders", methods =["GET"])
+def get_all_orders():
+    return order.get_all()
 
 if __name__=='__main__':
     app.run(debug=True)

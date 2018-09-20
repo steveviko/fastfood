@@ -13,3 +13,9 @@ class FastFoodOrders():
         if not results:              
             return "No value found"  
         return jsonify(self.listofOrders)
+
+    def get_all(self):
+        if self.listofOrders:
+            return jsonify(self.listofOrders)
+        else:
+            return jsonify({'messsage':'orders is Currently Empty'})
