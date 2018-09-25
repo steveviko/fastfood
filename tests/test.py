@@ -25,6 +25,7 @@ class TestQuestion(unittest.TestCase):
          self.assertIsInstance(self.order, Order)
 
     def test_add(self):
+        
         response = self.app.post("/api/v1/orders", data = json.dumps(self.sample_order), content_type = 'application/json')
         self.assertEqual(response.status_code, 201)
 
@@ -36,7 +37,8 @@ class TestQuestion(unittest.TestCase):
         response = self.app.get("/api/v1/orders/1")
         self.assertEqual(response.status_code, 200)
         
-    def test_Edit_order(self):
-       
+    def test_Edit_order(self):       
         response = self.app.put("api/v1/orders/1", data = json.dumps(self.sample_order), content_type = 'application/json')
         self.assertEqual(response.status_code, 201)
+
+    
