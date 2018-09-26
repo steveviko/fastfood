@@ -51,7 +51,28 @@ def Edit_order(orderId):
     updates = orders.update_order(int(orderId), order_status)
     return jsonify({"order": updates}), 201
 
+@app.route("/api/v1/menu-lists", methods = ["GET"])
+def fetch_all_menu():
+    if menus.menu_item_list == []:
+        return jsonify({"Msg": "items empty"}), 400
+    else:
+        items = menus.get_item_on_menu()
+        return jsonify({'menu': items}), 200
 
 
+@app.route("/api/v1/menu-lists", methods = ["POST"])
+def post_menu():
+    menu = {
+        "name": request.json["name"],
+        "amount": request.json["amount"]
+    }
+    data= [item for item in menus.menu_item_list if item["name"] == menu["name"]]
+    if menu["name"] == "" or menu["amount"] == "":
+        return jsonify({"Error": "Incomplete menu request"}), 400
+    if  data:
+        menus.add_menu_item(menu)
+        return jsonify({'menu': menu}), 201
+    else:
+        return jsonify({"Error": "item already exists"}), 400
 
 
