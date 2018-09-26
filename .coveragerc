@@ -1,7 +1,10 @@
 [report]
 
+[run]
 omit =
-    */home/*
-    
+
    
+    
+   # omit anything in a .virtualenv directory anywhere
+    */.virtualenv/*
     
