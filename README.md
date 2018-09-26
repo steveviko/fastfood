@@ -56,13 +56,13 @@ Open the browser to view the endpoints with their specifications
 # Contributors
 - [Steven Opio](https://github.com/steveviko)
 
-#This Platform is served by  
-- git-pages [GitHub Pages](https://steveviko.github.io/fastfood/). 
+# This Platform is served by  
+- Git-pages [GitHub Pages](https://steveviko.github.io/fastfood/). 
 
 # Demo
-- The API is hosted[HERE](https://fast-food-steven.herokuapp.com/api/v1/orders)
+- The API is hosted [Here](https://fast-food-steven.herokuapp.com/api/v1/orders)
 
 ### License
-MIT License
+- MIT License
 
 Copyright (c) 2018 **VenViko**
