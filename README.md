@@ -3,16 +3,16 @@
 [![Build Status](https://travis-ci.org/steveviko/fastfood.svg?branch=develop)](https://travis-ci.org/steveviko/fastfood)
 [![Coverage Status](https://coveralls.io/repos/github/steveviko/fastfood/badge.svg?branch=develop)](https://coveralls.io/github/steveviko/fastfood?branch=develop)
 
--Fast-Food-Fast is a food delivery service app for a restaurant.
+- Fast-Food-Fast is a food delivery service app for a restaurant.
 
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 # Installation
 **Clone this _Repository_**
-```
-$ [clone](https://github.com/steveviko/fastfood/tree/develop) to your computer
-```
+
+ - [clone](https://github.com/steveviko/fastfood/tree/develop) to your computer
+
 
  # Tools
  ``` 
