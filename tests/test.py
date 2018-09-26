@@ -18,11 +18,11 @@ class TestQuestion(unittest.TestCase):
             'status': 'Pending'
         }
             
-        # self.sample_menu = {
-        #     "id": 1,
-        #     "name": "Beef",
-        #     "amount": 10000
-        # }
+        self.sample_menu = {
+            "id": 1,
+            "name": "Beef",
+            "amount": 10000
+        }
         
 
     def test_order_creation(self):
@@ -48,12 +48,12 @@ class TestQuestion(unittest.TestCase):
         response = self.app.put("api/v1/orders/1", data = json.dumps(self.sample_order), content_type = 'application/json')
         self.assertEqual(response.status_code, 201)
 
-    # def test_add_menu(self):
-    #     self.assertEqual(len(self.order.menu_item_list),0)
-    #     self.order.add_menu_item(self.sample_menu)
-    #     self.assertEqual(len(self.order.menu_item_list),1)
-    #     response = self.app.post("/api/v1/menu-lists", data = json.dumps(self.sample_menu), content_type = 'application/json')
-    #     self.assertEqual(response.status_code, 201)
+    def test_add_menu(self):
+        self.assertEqual(len(self.order.menu_item_list),0)
+        self.order.add_menu_item(self.sample_menu)
+        self.assertEqual(len(self.order.menu_item_list),1)
+        response = self.app.post("/api/v1/menu-lists", data = json.dumps(self.sample_menu), content_type = 'application/json')
+        self.assertEqual(response.status_code, 201)
 
-    # def test_fetch_all_menu(self):        
-    #     self.assertEqual(len(self.order.menu_item_list),2)
+    def test_fetch_all_menu(self):        
+        self.assertEqual(len(self.order.menu_item_list),2)
