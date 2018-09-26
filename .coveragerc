@@ -1,22 +1,7 @@
 [report]
 
 omit =
-    */venv/*    
-    */.vscode/*
-    */home/*  
-     
-     */home/*
-    */travis/*
-    */virtualenv/*
-    */python3.6.3/*
-    */lib/*
-    */python3.6/*
-    */site-packages/*
-    */click/*
-    */flask/*
-    */jinja2/*
-    */markupsafe/*
-    */nose/*
-    */pkg_resources/*
-    */werkzeug/*
-    */itsdangerous.py*
+    */python?.?/*
+    */site-packages/nose/*
+    *__init__*
+    */home/*
