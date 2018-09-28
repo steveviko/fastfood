@@ -38,11 +38,15 @@ class Order(Menu):
                 return order_list
 
     def get_order_by_id(self, orderId):
-        for order in self.order_list:
-            if order["order_id"] == orderId:
-                item_name = self.item_name(order["item"])
-                order["item"] = item_name
-            return order
+        
+        # Loop through the data and match results that fit the requested ID.
+        order=[order for order in self.order_list if order['order_id']==orderId]
+        if 'order_id' in order:
+            orderId= int(order['order_id'])
+            return order      
+        else:
+            return "id field provided does not exist"
+
 
     def update_order(self, orderId, status):
         update_order = [status for status in self.order_list if status["order_id"] == orderId]
@@ -50,5 +54,5 @@ class Order(Menu):
             update_order[0]["status"] = status
             return update_order
         else:
-            return "does not exist"
+            return "id field provided does not exist"
                     
