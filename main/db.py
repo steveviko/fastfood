@@ -5,7 +5,7 @@ class DatabaseConnection():
     con =None
 
     try:
-        # myConnection 
+        # myConnection  to the db
         con = psycopg2.connect(host="localhost", user="manager",password="fastadmin", dbname="fastfood")
         print('connection to db was a success')
         
