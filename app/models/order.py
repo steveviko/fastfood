@@ -21,11 +21,17 @@ class Menu:
 class Order(Menu):
     
     order_list = []
-    def add(self, order):
-        order["order_id"] = (len(self.order_list) + 1)
-        order["status"] = "Pending"
-        self.order_list.append(order)
-        return order
+    def add(self,order):       
+            order["item"] = (len(self.order_list) + 1)
+            order["order_id"] = (len(self.order_list) + 1)
+            order["status"] = "Pending"
+            self.order_list.append(order)
+            return order
+       
+
+       
+
+        
 
     def get_all(self):
         order_list = self.order_list[:]
