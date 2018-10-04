@@ -27,6 +27,8 @@ def create_order():
     insert_one= orders.post_order(amount, ordered_at,status)
     return jsonify({'order': insert_one})
 
+
+
 @app.route('/api/v2/menu-items', methods=['POST'])
 def create_menu():
     data = request.data
@@ -36,4 +38,10 @@ def create_menu():
     "amount":results['amount']
     }
     insert_menu= menus.add_menu_item(menu )
-    return jsonify({'menu': insert_menu})
+    return jsonify({'menu': insert_menu})  
+
+@app.route("/api/v2/menu", methods=["GET"])
+def get_all():
+    """Implements the get menu api."""
+    menu_items = menus.get_menu_items()
+    return jsonify({'menu': menu_items}), 200

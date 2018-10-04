@@ -79,7 +79,7 @@ class Menu(DatabaseConnection):
         sql = "INSERT INTO menu(item_name, amount) VALUES (%s, %s)"
         self.cur.execute(sql, (menu["item_name"], menu["amount"]))
 
-    def get_menu_items(self,item_name,amount):
+    def get_menu_items(self):
         """collect menu records  """
         sql = "SELECT * FROM menu"
         self.cur.execute(sql)
