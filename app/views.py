@@ -1,9 +1,8 @@
 from flask import request, jsonify, make_response,json
-
 from app import app
 from app.db import DatabaseConnection,Order,Menu,Users
 from app.validate import Validation
-from user import User
+
 
 
 
@@ -28,3 +27,13 @@ def create_order():
     insert_one= orders.post_order(amount, ordered_at,status)
     return jsonify({'order': insert_one})
 
+@app.route('/api/v2/menu-items', methods=['POST'])
+def create_menu():
+    data = request.data
+    results  =json.loads(data) 
+    menu={   
+    "item_name": results['item_name'],
+    "amount":results['amount']
+    }
+    insert_menu= menus.add_menu_item(menu )
+    return jsonify({'menu': insert_menu})
