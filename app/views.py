@@ -27,7 +27,10 @@ def create_order():
     insert_one= orders.post_order(amount, ordered_at,status)
     return jsonify({'order': insert_one})
 
-
+@app.route("/api/v2/orders", methods=["GET"])
+def get_all_orders():        
+    order_list = orders.get_orders()
+    return jsonify({'orders': order_list}), 200
 
 @app.route('/api/v2/menu-items', methods=['POST'])
 def create_menu():

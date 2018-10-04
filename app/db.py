@@ -107,8 +107,8 @@ class Order(Menu):
 
     def get_orders(self):
         """get all orders """
-        sql="SELECT order_id, amount, status,ordered_at, item_name, username FROM orders \
-        INNER JOIN menu ON orders.menu_id = menu.menu_id INNER JOIN users ON orders.user_id = users.user_id"
+        sql="SELECT order_id, amount, status,ordered_at FROM orders"# \
+        #INNER JOIN menu ON orders.menu_id = menu.menu_id INNER JOIN users ON orders.user_id = users.user_id"
         self.cur.execute(sql) 
         result=self.cur.fetchall()     
         return result  
