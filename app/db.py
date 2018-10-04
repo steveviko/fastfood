@@ -57,12 +57,20 @@ class Users(DatabaseConnection):
 
     
 
-    def register_user(self, email, password, hash_password):
-      
+    def register_user(self, email, password, hash_password):      
         """ insert a new user into the users table """
         sql = """INSERT INTO users(email, password, hash_password)
                 VALUES(%s,%s, %s);"""
         return self.cur.execute(sql, (email, password, hash_password))
+
+    def fetch_user(self, email):
+        sql = self.Fetch_user_name(email)
+        return sql.rowcount
+
+    def Fetch_user_name(self, email):
+        sql = """SELECT * FROM users WHERE user_email=%s;"""
+        return self.cur.execute(sql, email)
+        
         
       
    
