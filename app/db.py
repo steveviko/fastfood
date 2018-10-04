@@ -1,7 +1,7 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from werkzeug.security import generate_password_hash, check_password_hash
-from main.models.user import User
+
 
 
 
@@ -32,7 +32,7 @@ class DatabaseConnection:
                 orders_table = ("CREATE TABLE IF NOT EXISTS orders"
                                 "(order_id serial  NOT NULL PRIMARY KEY,"
                                 "amount INTEGER NOT NULL,"
-                                "ordered_at time NOT NULL,"
+                                "ordered_at VARCHAR(25) NOT NULL,"
                                 "status VARCHAR(11) NOT NULL,"
                                 "user_id INTEGER, FOREIGN KEY (user_id) REFERENCES users(user_id),"
                                 "menu_id INTEGER, FOREIGN KEY (menu_id) REFERENCES menu(menu_id))")
@@ -116,12 +116,11 @@ class Order(Menu):
         result = self.cur.fetchone()
         return result
 
-    def post_order(self, order_id, amount, ordered_at,status="pending"):        
-        sql = "Insert INTO orders (order_id, amount, ordered_at,status) VALUES({},{},{},'{}')".format(
-            order_id, amount, ordered_at,status)
+    def post_order(self, amount, ordered_at,status):        
+        sql = "Insert INTO orders (amount, ordered_at,status) VALUES({},{},'{}')".format(
+            amount, ordered_at,status)
         self.cur.execute(sql)
-        result = self.cur.fetchone()
-        return result
+        
 
     def update_order_status(self, orderId, status):
         """Updates order status"""
