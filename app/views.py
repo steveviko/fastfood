@@ -3,6 +3,9 @@ from flask import request, jsonify, make_response,json
 from app import app
 from app.db import DatabaseConnection,Order,Menu,Users
 from app.validate import Validation
+from user import User
+
+
 
 
 
@@ -24,3 +27,4 @@ def create_order():
     status = results['status']
     insert_one= orders.post_order(amount, ordered_at,status)
     return jsonify({'order': insert_one})
+

@@ -55,13 +55,16 @@ class Users(DatabaseConnection):
         return data
 
 
-    def add_user(self, my_account):
-        sql = "INSERT INTO users(username, email, password, role) VALUES(\
-        '{}', '{}', '{}',  'admin')".format(my_account["username"], my_account["email"]\
-        , generate_password_hash(my_account["password"]))
-        self.cur.execute(sql)
-        return my_account  
+    
+
+    def register_user(self, email, password, hash_password):
+      
+        """ insert a new user into the users table """
+        sql = """INSERT INTO users(email, password, hash_password)
+                VALUES(%s,%s, %s);"""
+        return self.cur.execute(sql, (email, password, hash_password))
         
+      
    
       
 class Menu(DatabaseConnection):
