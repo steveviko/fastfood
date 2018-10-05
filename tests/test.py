@@ -1,9 +1,26 @@
 import unittest
-import json
+from app.db import DatabaseConnection,Users,Menu,Order
+from app import app
 
+db = DatabaseConnection()
+user =Menu()
+order=Order()
 
 
 
 class TestMainTestCase(unittest.TestCase): 
     def setUp(self):
-        pass
+        self.db= DatabaseConnection()
+        self.menu =Menu()
+        self.order=Order()
+
+    def test_order_creation(self):
+         """ test if object created is of class Order """ 
+         self.assertIsInstance(self.order, Order)
+
+   
+    
+        
+    
+
+

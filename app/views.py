@@ -1,4 +1,4 @@
-from flask import request, jsonify, make_response,json
+from flask import request, jsonify, make_response, json
 from app import app
 from app.db import DatabaseConnection,Order,Menu,Users
 from app.validate import Validation
@@ -43,27 +43,29 @@ def create_menu():
     "item_name": results['item_name'],
     "amount":results['amount']
     }
-    insert_menu= menus.add_menu_item(menu )
-    return jsonify({'menu': insert_menu})  
+    if not  menu:
+        return jsonify({"message":"item name already available"})    
+    return jsonify(menus.add_menu_item(menu ))      
+    
+     
 
 @app.route("/api/v2/menu", methods=["GET"])
 def get_all():
     """Implements the get menu api."""
     menu_items = menus.get_menu_items()
+    # if not menu_items:
     return jsonify({'menu': menu_items}), 200
 
 @app.route('/api/v2/auth/signup', methods=['POST'])
-def register_user():
-    request_data = request.data
-    data = json.loads(request_data)
-    if not data:
+def register_user():  
+    if not  request.json:
         return jsonify({'error': 'unsupported format'}), 400
-    elif 'email' not in data:
+    elif 'email' not in  request.json:
         return jsonify({'error': 'user name is requred'}), 400
-    elif 'password' not in data:
+    elif 'password' not in  request.json:
         return jsonify({'error': 'password required'}), 400
-    email = data['email']
-    password = data['password']
+    email =  request.json['email']
+    password =  request.json['password']
     if not validate.validate_email(email):
         activity.user_register(email, password)
         return jsonify({'success': 'registered successfully'}), 201
