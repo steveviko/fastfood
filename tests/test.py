@@ -32,6 +32,9 @@ class TestMainTestCase(unittest.TestCase):
         self.assertTrue(app.config['DEBUG'] is True)
         self.assertFalse(app is None)
         
+    def create_app(self):
+        app.config.from_object('FASTFOOD.app.config.DevelopmentConfig')
+        return app
     
 
 
