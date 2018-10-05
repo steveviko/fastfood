@@ -18,6 +18,9 @@ class TestMainTestCase(unittest.TestCase):
          """ test if object created is of class Order """ 
          self.assertIsInstance(self.order, Order)
 
+    def test_menu_creation(self):
+         """ test if object created is of class Order """ 
+         self.assertIsInstance(self.menu, Menu)
    
     
         
