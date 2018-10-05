@@ -25,7 +25,12 @@ class TestMainTestCase(unittest.TestCase):
     def test_db_creation(self):
          """ test if object created is of class DatabaseConnection """ 
          self.assertIsInstance(self.db, DatabaseConnection)
-    
+
+    def test_app_is_development(self):
+        self.assertFalse(app.config['SECRET_KEY'] is 'breakthrough')
+        self.assertTrue(app.config['TESTING'] is True)
+        self.assertTrue(app.config['DEBUG'] is True)
+        self.assertFalse(app is None)
         
     
 
