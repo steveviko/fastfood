@@ -19,9 +19,12 @@ class TestMainTestCase(unittest.TestCase):
          self.assertIsInstance(self.order, Order)
 
     def test_menu_creation(self):
-         """ test if object created is of class Order """ 
+         """ test if object created is of class Menu """ 
          self.assertIsInstance(self.menu, Menu)
    
+    def test_db_creation(self):
+         """ test if object created is of class DatabaseConnection """ 
+         self.assertIsInstance(self.db, DatabaseConnection)
     
         
     
