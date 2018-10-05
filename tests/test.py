@@ -35,6 +35,10 @@ class TestMainTestCase(unittest.TestCase):
     def create_app(self):
         app.config.from_object('FASTFOOD.app.config.DevelopmentConfig')
         return app
+
+    def test_app_is_testing(self):
+        self.assertFalse(app.config['SECRET_KEY'] is 'breakthrough')
+        self.assertTrue(app.config['DEBUG'])
     
 
 
